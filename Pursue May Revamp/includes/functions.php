@@ -50,7 +50,6 @@ function displayJobDetails($job) {
         echo "<p>Location: " . htmlspecialchars($job['location']) . "</p>";
         echo "<p>Date Posted: " . date('F j, Y', strtotime($job['date_posted'])) . "</p>";
         echo "<p>Job Type: " . htmlspecialchars($job['job_type']) . "</p>"; //ADDED
-        echo "<p>Target Audience: " . htmlspecialchars($job['junior_badge']) . "</p>"; //ADDED
 
         // Add more fields as necessary
     } else {

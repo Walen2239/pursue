@@ -3,16 +3,20 @@ body {
     background-color: #4545a3;
     color: white;
   }
-  
   .sidebar {
-    background-color: #331a5e;
-    min-height: 100vh;
-    padding-bottom: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: fixed; /* Make it fixed */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+    width: 250px; /* Set the width of the sidebar */
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: #331a5e !important; 
   }
-  
+  .main-content {
+    margin-left: 250px; /* Add margin to the main content to prevent overlap */
+    padding: 20px;
+  }
   .sidebar .nav-link {
     font-size: 1.3rem;
     color: white;
