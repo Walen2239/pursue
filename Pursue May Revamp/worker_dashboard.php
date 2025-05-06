@@ -19,23 +19,6 @@ mysqli_close($conn);
     <title>Worker Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/pursue_style.css" />
-    <style>
-        .sidebar {
-            position: fixed; /* Make it fixed */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            height: 100vh; /* Full viewport height */
-            overflow-y: auto; /* Enable vertical scroll if needed */
-            width: 250px; /* Set the width of the sidebar */
-            z-index: 1000; /* Ensure it's above other elements */
-            background-color: #331a5e; 
-        }
-        .main-content {
-            margin-left: 250px; /* Add margin to the main content to prevent overlap */
-            padding: 20px;
-        }
-
-    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -62,68 +45,77 @@ mysqli_close($conn);
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
                             <div class="content">
-                                 <h5 class="mt-3">Education & Training</h5>
+                                <h5 class="mt-3">Education & Training</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
-                            
                             <div class="content">
-                                 <h5 class="mt-3">Healthcare</h5>
+                                <h5 class="mt-3">Healthcare</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
-                           
                             <div class="content">
-                                 <h5 class="mt-3">Sales & Marketing</h5>
+                                <h5 class="mt-3">Sales & Marketing</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
-                            
                             <div class="content">
-                                 <h5 class="mt-3">IT & Software</h5>
+                                <h5 class="mt-3">IT & Software</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
-                            
                             <div class="content">
-                                 <h5 class="mt-3">Hospitality</h5>
+                                <h5 class="mt-3">Hospitality</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
-                            
                             <div class="content">
-                                 <h5 class="mt-3">Accounting & Finance</h5>
+                                <h5 class="mt-3">Accounting & Finance</h5>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="row justify-content-center g-4 mt-2">
-                        <?php foreach ($jobListings as $job): ?>
-                            <div class="col-md-4">
-                                <a href="job_details.php?id=<?php echo $job['id']; ?>" class="job-box">
-                                    <div class="d-flex align-items-center">
-                                         <img src="images/" alt="Company Logo" class="company-logo" />
-                                        <div>
-                                             <h5 class="job-title"><?php echo htmlspecialchars($job['title']); ?></h5>
-                                             <p class="company-name"><?php echo htmlspecialchars($job['company_name']); ?></p>
-                                        </div>
+                    <?php foreach ($jobListings as $job):
+                         $companyName = htmlspecialchars($job['company_name']);
+                         $imagePath = "images/" . $companyName; //without extension
+                         $pngPath =  $imagePath . ".png";
+                         $jpgPath =  $imagePath . ".jpg";
+                         $jpegPath = $imagePath . ".jpeg";
+                    ?>
+                        <div class="col-md-4">
+                            <a href="job_details.php?id=<?php echo $job['id']; ?>" class="job-box">
+                                <div class="d-flex align-items-center">
+                                    <?php if (file_exists($pngPath)): ?>
+                                        <img src="<?php echo $pngPath; ?>" alt="Company Logo" class="company-logo" />
+                                    <?php elseif (file_exists($jpgPath)): ?>
+                                        <img src="<?php echo $jpgPath; ?>" alt="Company Logo" class="company-logo" />
+                                     <?php elseif (file_exists($jpegPath)): ?>
+                                        <img src="<?php echo $jpegPath; ?>" alt="Company Logo" class="company-logo" />
+                                    <?php else: ?>
+                                        <img src="images/default_logo.png" alt="Company Logo" class="company-logo" />
+                                    <?php endif; ?>
+                                    <div>
+                                        <h5 class="job-title"><?php echo htmlspecialchars($job['title']); ?></h5>
+                                        <p class="company-name"><?php echo htmlspecialchars($job['company_name']); ?></p>
                                     </div>
-                                    <div class="location"><?php echo htmlspecialchars($job['location']); ?></div>
-                                    <p class="job-type"><?php echo htmlspecialchars($job['job_type']); ?></p>
-                                    <small class="post-date">Posted: <?php echo date('F j, Y', strtotime($job['date_posted'])); ?></small>
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
+                                </div>
+                                <div class="location"><?php echo htmlspecialchars($job['location']); ?></div>
+                                <p class="job-type"><?php echo htmlspecialchars($job['job_type']); ?></p>
+                                <small class="post-date">Posted: <?php echo date('F j, Y', strtotime($job['date_posted'])); ?></small>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </main>
         </div>

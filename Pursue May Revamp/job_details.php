@@ -92,7 +92,16 @@ mysqli_close($conn);
                             </div>
                             <?php 
                                 if(isset($jobDetails)){
-                                    echo '<div style="text-align:center;"><img src="images/'.htmlspecialchars($jobDetails['company_name']).'" alt="Company Logo" /></div>';
+                                    $companyName = htmlspecialchars($jobDetails['company_name']);
+                                    $pngPath = "images/" . $companyName . ".png";
+                                    $jpgPath = "images/" . $companyName . ".jpg";
+                                        if (file_exists($pngPath)) {
+                                             echo '<div style="text-align:center;"><img src="' . $pngPath . '" alt="Company Logo" /></div>';
+                                        } elseif (file_exists($jpgPath)) {
+                                             echo '<div style="text-align:center;"><img src="' . $jpgPath . '" alt="Company Logo" /></div>';
+                                        } else {
+                                             echo '<div style="text-align:center;">No Company Logo Available</div>'; // Or show a default image
+                                        }
                                     echo '<h2>'.htmlspecialchars($jobDetails['title']).'</h2>';
                                     echo '<p><strong>Company Name:</strong> '.htmlspecialchars($jobDetails['company_name']).'</p>';
                                     echo '<p><strong>Location:</strong> '.htmlspecialchars($jobDetails['location']).'</p>';
