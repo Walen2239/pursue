@@ -60,6 +60,10 @@ mysqli_close($conn);
             border-radius: 8px;
             margin-bottom: 15px;
         }
+        .back{
+            text-align:right;
+            margin-bottom: 2rem;
+        }
 
     </style>
 </head>
@@ -87,8 +91,8 @@ mysqli_close($conn);
                     <div class="container">
                     <div class="col-md-7 mx-auto">
                         <div class="job-details-box" >
-                            <div style="text-align:right">
-                                <p><a href="#" onclick="window.history.back();">Back to Listings</a></p>
+                            <div class="back">
+                            <button type="button" href="#" onclick="window.history.back();"class="btn btn-outline-dark btn-lg">Back to Listings</button>
                             </div>
                             <?php 
                                 if(isset($jobDetails)){
@@ -102,7 +106,7 @@ mysqli_close($conn);
                                         } else {
                                              echo '<div style="text-align:center;">No Company Logo Available</div>'; // Or show a default image
                                         }
-                                    echo '<h2>'.htmlspecialchars($jobDetails['title']).'</h2>';
+                                    echo '<h2 style="margin-top: 1.2rem;">'.htmlspecialchars($jobDetails['title']).'</h2>';
                                     echo '<p><strong>Company Name:</strong> '.htmlspecialchars($jobDetails['company_name']).'</p>';
                                     echo '<p><strong>Location:</strong> '.htmlspecialchars($jobDetails['location']).'</p>';
                                     echo '<p><strong>Job Type:</strong> '.htmlspecialchars($jobDetails['job_type']).'</p>';
@@ -121,3 +125,5 @@ mysqli_close($conn);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
