@@ -29,17 +29,12 @@ mysqli_close($conn);
                 </div>
                 <nav class="nav flex-column">
                     <a class="nav-link text-white" href="/profile">Profile</a>
-                    <a href="employer_add_job.php" class="nav-link text-white">New Listing</a>
-                    <a href="employer_add_job.php" class="nav-link text-white">Your Listing</a>
                     <a class="nav-link active fw-bold text-white" href="#">All Category</a>
-                    <a class="nav-link text-white" href="#">Listing 1</a>
-                    <a class="nav-link text-white" href="#">Listing 2</a>
-                    <a class="nav-link text-white" href="#">Listing 3</a>
                     <a class="nav-link text-white" href="#">About Us</a>
+                    <a href="employer_add_job.php" style="margin-top:2rem" class="nav-link text-white">New Listing</a>
+                    <a href="employer_add_job.php" class="nav-link text-white">Your Listing</a>
+                    <a href="logout.php" style="margin-top:2rem" class="nav-link text-red">Logout</a>
                 </nav>
-                <div class="mt-5 text-center">
-                    <a href="logout.php" class="btn btn-primary">Logout</a>
-                </div>
             </aside>
             <main class="col-md-9 col-lg-10 p-4 main-content mt-2">
                 <div class="row justify-content-center g-4 mt-2">
