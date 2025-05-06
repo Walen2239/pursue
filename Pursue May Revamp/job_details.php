@@ -92,7 +92,7 @@ mysqli_close($conn);
                             </div>
                             <?php 
                                 if(isset($jobDetails)){
-                                    echo '<div style="text-align:center;"><img src="images/'.htmlspecialchars($jobDetails['company_logo']).'" alt="Company Logo" /></div>';
+                                    echo '<div style="text-align:center;"><img src="images/'.htmlspecialchars($jobDetails['company_name']).'" alt="Company Logo" /></div>';
                                     echo '<h2>'.htmlspecialchars($jobDetails['title']).'</h2>';
                                     echo '<p><strong>Company Name:</strong> '.htmlspecialchars($jobDetails['company_name']).'</p>';
                                     echo '<p><strong>Location:</strong> '.htmlspecialchars($jobDetails['location']).'</p>';
