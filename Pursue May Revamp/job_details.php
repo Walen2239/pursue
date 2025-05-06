@@ -53,6 +53,7 @@ mysqli_close($conn);
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a similar effect */
             color: #000;
+            font-size: 1.3rem;
         }
         .job-details-box img{
             max-width: 100%;
@@ -64,7 +65,6 @@ mysqli_close($conn);
             text-align:right;
             margin-bottom: 2rem;
         }
-
     </style>
 </head>
 <body>
@@ -76,7 +76,7 @@ mysqli_close($conn);
                 </div>
                 <nav class="nav flex-column">
                     <a class="nav-link text-white" href="/profile">Profile</a>
-                    <a class="nav-link active fw-bold text-white" href="#">All Category</a>
+                    <a class="nav-link active fw-bold text-white" onclick="window.history.back();">All Category</a>
                     <a class="nav-link text-white" href="#">About Us</a>
                     <a href="logout.php" style="margin-top:2rem" class="nav-link text-red">Logout</a>
                 </nav>
@@ -101,7 +101,7 @@ mysqli_close($conn);
                                         } else {
                                              echo '<div style="text-align:center;">No Company Logo Available</div>'; // Or show a default image
                                         }
-                                    echo '<h2 style="margin-top: 1.2rem;">'.htmlspecialchars($jobDetails['title']).'</h2>';
+                                    echo '<h2 style="margin-top: 1.2rem; font-size:2.5rem;">'.htmlspecialchars($jobDetails['title']).'</h2>';
                                     echo '<p><strong>Company Name:</strong> '.htmlspecialchars($jobDetails['company_name']).'</p>';
                                     echo '<p><strong>Location:</strong> '.htmlspecialchars($jobDetails['location']).'</p>';
                                     echo '<p><strong>Job Type:</strong> '.htmlspecialchars($jobDetails['job_type']).'</p>';

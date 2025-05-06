@@ -26,6 +26,25 @@ function getAllJobListings($conn) {
     }
     return $listings;
 }
+// Function to get all job listings by a user id
+function getJobListingsByEmployerId(mysqli $conn, int $employer_id): array {
+    $query = "SELECT * FROM job_listings WHERE employer_id = ?";
+    $stmt = mysqli_prepare($conn, $query);
+
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $employer_id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        $jobListings = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_stmt_close($stmt);
+        return $jobListings;
+    } else {
+        // Handle the error appropriately (e.g., log it, display a user-friendly message)
+        error_log("Error preparing statement: " . mysqli_error($conn));
+        return []; // Return an empty array to avoid further errors
+    }
+}
 
 // Function to get job listing details
 function getJobListingDetails($conn, $id) {

@@ -83,22 +83,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/styles.css"> </head>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<style>
+    body {
+        background-color: #4545a3;
+    }
+</style>
 <body>
-    <div class="container">
+    <div class="container" style="font-size:2rem;">
         <h2>Login</h2>
         <?php if ($error) { echo "<p class='error'>$error</p>"; } ?>
-        <form method="post" action="login.php">
+        <form method="post" action="login.php" style="font-size:1.6rem;">
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" required>
+                <input type="email" id="email" name="email" style="font-size:1.2rem;" value="<?php echo htmlspecialchars($email ?? ''); ?>" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" style="font-size:1.2rem;" name="password" required>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" style="font-size:1.3rem;">Login</button>
         </form>
-        <p>Don't have an account? <a href="register.php">Register</a></p> </div>
+        <div style="font-size:1.5rem;">
+        <p>Don't have an account? <a href="register.php">Register</a></p> 
+        </div>
+        </div>
 </body>
 </html>

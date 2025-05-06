@@ -194,10 +194,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <nav class="nav flex-column">
                     <a class="nav-link text-white" href="/profile">Profile</a>
-                    <a class="nav-link text-white" href="#">All Category</a>
+                    <a class="nav-link text-white" onclick="window.history.back();">All Category</a>
                     <a class="nav-link text-white" href="#">About Us</a>
                     <a href="employer_add_job.php" style="margin-top:2rem" class="nav-link active fw-bold text-white">New Listing</a>
-                    <a href="employer_add_job.php" class="nav-link text-white">Your Listing</a>
+                    <a href="employer_listing.php" class="nav-link text-white">Your Listing</a>
                     <a href="logout.php" style="margin-top:2rem" class="nav-link text-red">Logout</a>
                 </nav>
             </aside>
