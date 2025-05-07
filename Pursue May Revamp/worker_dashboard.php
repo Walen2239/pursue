@@ -31,12 +31,13 @@ mysqli_close($conn);
                     <a class="nav-link text-white" href="/profile">Profile</a>
                     <a class="nav-link active fw-bold text-white" href="#">All Category</a>
                     <a class="nav-link text-white" href="#">About Us</a>
+                    <a href="applied_listing.php" style="margin-top:2rem" class="nav-link text-white">Applied Listing</a>
                     <a href="logout.php" style="margin-top:2rem" class="nav-link text-red">Logout</a>
                 </nav>
             </aside>
-            <main class="col-md-9 col-lg-10 p-4 main-content mt-2">
-                <div class="row justify-content-center g-4 mt-2">
-                    <h2 class="mb-4 text-center">FEATURED JOB LISTING IN PURSUE WEBSITE</h2>
+            <main class="col-md-9 col-lg-10 p-4 main-content">
+                <div class="row justify-content-center g-4">
+                    <!-- <h2 class="mb-4 text-center">FEATURED JOB LISTING IN PURSUE WEBSITE</h2> -->
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
                             <div class="content">

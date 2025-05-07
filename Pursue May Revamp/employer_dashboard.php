@@ -36,9 +36,9 @@ mysqli_close($conn);
                     <a href="logout.php" style="margin-top:2rem" class="nav-link text-red">Logout</a>
                 </nav>
             </aside>
-            <main class="col-md-9 col-lg-10 p-4 main-content mt-2">
-                <div class="row justify-content-center g-4 mt-2">
-                    <h2 class="mb-4 text-center">FEATURED JOB LISTING IN PURSUE WEBSITE</h2>
+            <main class="col-md-9 col-lg-10 p-4 main-content">
+                <div class="row justify-content-center g-4">
+                    <!-- <h2 class="mb-4 text-center">FEATURED JOB LISTING IN PURSUE WEBSITE</h2> -->
                     <div class="col-md-2">
                         <a href="category.html" class="category-box text-decoration-none">
                             <div class="content">
