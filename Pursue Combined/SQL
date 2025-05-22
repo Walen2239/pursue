@@ -35,6 +35,7 @@ CREATE TABLE listings (
     salary VARCHAR(255),
     date_posted DATE NOT NULL DEFAULT CURDATE(),
     job_type VARCHAR(255),
+    category VARCHAR(255),
     adminID INT,
     approval INT NOT NULL DEFAULT 0
 );
