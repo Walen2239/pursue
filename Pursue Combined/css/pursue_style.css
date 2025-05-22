@@ -1,0 +1,183 @@
+
+body {
+    background-color: #4545a3;
+    color: white;
+  }
+  .sidebar {
+    position: fixed; /* Make it fixed */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+    width: 250px; /* Set the width of the sidebar */
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: #331a5e !important; 
+  }
+  .main-content {
+    margin-left: 250px; /* Add margin to the main content to prevent overlap */
+    padding: 20px;
+  }
+  .sidebar .nav-link {
+    font-size: 1.3rem;
+    color: white;
+  }
+  
+  .sidebar .nav-link:hover,
+  .sidebar .nav-link.active {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .category-box {
+    background-color: #6c87d4;
+    padding: 0;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .category-box:hover {
+    background-color: #748ddb;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .category-box .content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .category-box h5 {
+    margin-top: 0;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  .job-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    height: 200px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .job-box:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .job-box h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+  }
+  
+  .job-box p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+  }
+  
+  .job-box small {
+    color: #666666;
+    display: block;
+    font-size: 0.8rem;
+  }
+  
+  .pagination .page-link {
+    background-color: #6c87d4;
+    border-color: #6c87d4;
+    color: white;
+  }
+  
+  .pagination .page-link:hover {
+    background-color: #748ddb;
+    border-color: #748ddb;
+  }
+  
+  .pagination .page-item.active .page-link {
+    background-color: #748ddb;
+    border-color: #748ddb;
+    color: white;
+  }
+  
+  .pagination .page-item:first-child .page-link,
+  .pagination .page-item:last-child .page-link {
+    border-radius: 8px;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .nav-link {
+    color: white;
+  }
+  
+  .job-box .company-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 10px;
+    object-fit: contain;
+    background-color: #f0f0f0;
+  }
+  
+  .job-box .job-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0.25rem;
+  }
+  
+  .job-box .company-name {
+    font-size: 1.1rem;
+    color: #003366;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-box .location {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .job-box .job-type {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-box .post-date {
+    font-size: 0.8rem;
+    color: #505050;
+    margin-top: 0.4rem;
+    align-self: flex-end;
+  }

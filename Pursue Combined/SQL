@@ -1,0 +1,89 @@
+CREATE DATABASE IF NOT EXISTS pursue;
+USE pursue;
+
+CREATE TABLE admins (
+    adminID INT AUTO_INCREMENT PRIMARY KEY,
+    adminFName VARCHAR(255),
+    adminLName VARCHAR(255),
+    adminEmail VARCHAR(255),
+    adminPassword VARCHAR(255)
+);
+
+CREATE TABLE applicants (
+    appID INT AUTO_INCREMENT PRIMARY KEY,
+    appFName VARCHAR(255),
+    appLName VARCHAR(255),
+    appEmail VARCHAR(255),
+    appPassword VARCHAR(255)
+);
+
+CREATE TABLE recruiters (
+    recID INT AUTO_INCREMENT PRIMARY KEY,
+    recFName VARCHAR(255),
+    recLName VARCHAR(255),
+    recEmail VARCHAR(255),
+    recPassword VARCHAR(255)
+);
+
+CREATE TABLE listings (
+    listingsID INT AUTO_INCREMENT PRIMARY KEY;
+    recID INT,
+    job_title VARCHAR(255), 
+    company_name VARCHAR(255), 
+    description TEXT,
+    location VARCHAR(255),
+    salary VARCHAR(255),
+    date_posted DATE NOT NULL DEFAULT CURDATE(),
+    job_type VARCHAR(255),
+    adminID INT,
+    approval INT NOT NULL DEFAULT 0
+);
+
+INSERT INTO admins (adminFName, adminLName, adminEmail, adminPassword)
+VALUES ('FirstName', 'LastName', 'EmailAddress', 'Password');
+
+
+CREATE TABLE job_applications (
+    applicationID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    appID INT(11) NOT NULL,
+    listingsID INT(11) NOT NULL,
+    application_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50) DEFAULT 'Pending', -- e.g., 'Pending', 'Reviewed', 'Accepted', 'Rejected'
+
+    -- Foreign Key Constraint for AppID
+    -- Assumes you have an 'applicants' table with a primary key named 'appID'
+    FOREIGN KEY (appID) REFERENCES applicants(appID) ON DELETE CASCADE ON UPDATE CASCADE,
+
+    -- Foreign Key Constraint for ListingID
+    -- Assumes you have a 'listings' table with a primary key named 'listingsID'
+    FOREIGN KEY (listingsID) REFERENCES listings(listingsID) ON DELETE CASCADE ON UPDATE CASCADE,
+
+    -- Optional: Ensure an applicant can only apply to a specific listing once
+    UNIQUE (appID, listingsID)
+);
+
+
+
+
+
+--COMBINE LISTING CODE FIRST JAMES, SECOND JETHRO
+
+-- CREATE TABLE listings (
+--     listingsID INT PRIMARY KEY,
+--     content VARCHAR(255), description same
+--     recID INT, done
+--     listingName VARCHAR(255),
+--     adminID INT,
+--     approval INT
+-- );
+
+-- CREATE TABLE listings (
+--     employer_id INT,
+--     title VARCHAR(255),  job_title
+--     company_name VARCHAR(255), 
+--     description TEXT,
+--     location VARCHAR(255),
+--     salary VARCHAR(255),
+--     date_posted DATE,
+--     job_type VARCHAR(255)
+-- );

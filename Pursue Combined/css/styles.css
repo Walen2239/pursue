@@ -1,0 +1,85 @@
+        .container {
+            margin-top: 50px;
+        }
+        .job-details-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .job-details-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+        .back-to-dashboard {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-to-dashboard a {
+            color: #0078d7;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .back-to-dashboard a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .form-group input[type="file"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
